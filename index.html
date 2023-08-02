@@ -4,7 +4,7 @@
         <title>Mass Mail Dispatcher</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
         <link rel="stylesheet" href="styles.css" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,30 +12,44 @@
     </head>
 
     <body>
-        <div class="header">
-            <h1>Mass Mail Dispatcher</h1>
-        </div>
+        <div class="main">
+            <div class="header">
+                <h1>Mass Mail Dispatcher</h1>
+            </div>
 
-        <div class="content">
-            <div class="card0">
-                <input type="file" id="chooseFile" accept="text/csv"></input>
-            </div>
-            <div class="card1">
-                <div class="invalidEmails">
-                    <h3>Invalid Email Addresses</h3>
+            <div class="container">
+                <div class="card1">
+                    <input type="file" id="upload" accept="text/csv">
                 </div>
-                <div class="validEmails">
-                    <h3>Valid Email Addresses</h3>
+                <div class="card2">                                         
+                    <div class="validEmail">
+                        <table id="val">
+                            <tr>
+                                <td>
+                                    <h3>Valid Emails : <span id="valCount"></span></h3>
+                                </td>
+                            </tr>
+                        </table>                             
+                    </div>
+                    <div class="invalidEmail">
+                        <table id="inval">
+                            <tr>
+                                <td>
+                                    <h3>Invalid Emails : <span id="invalCount"></span></h3>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <div class="card2">
-                <form>
-                    <h2>Enter Details</h2>
-                    <input type="text" placeholder="From" required>
-                    <input type="text" placeholder="Subject" required>
-                    <textarea type="text" placeholder="Body" required></textarea>
-                    <button type="submit">Send</button>
-                </form>
+                <div class="card3">
+                    <form>
+                        <h2>Enter Details</h2>
+                        <input type="email" id="from" placeholder="From" required>
+                        <input type="text" id="subject" placeholder="Subject" required>
+                        <textarea id="message" rows="12" cols="12" placeholder="Body" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
             </div>
         </div>
     </body>
