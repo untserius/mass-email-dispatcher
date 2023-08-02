@@ -1,10 +1,40 @@
-// Email Validation Checker
+let upload = document.getElementById('upload'); 
+upload.addEventListener('change', () => {       
+    let fr = new FileReader();                  
+    fr.readAsText(upload.files[0]);             
+    fr.onload = function () {
+                                                
+        let Arr = fr.result.split(/\r?\n|\n/).map(e => {
+            return e.split(',');
+        });
+        let valNo = 0;
+        let invalNo = 0;
+        let valMail = [];
+        Arr.forEach(e => {
+            let em = String(e);
+            let m = e.map(e => {
+                return `<td>${e}</td>`;
+            })
+            let creEle = document.createElement("tr");
+            creEle.innerHTML = m;
 
-
-let upload = document.getElementById("chooseFile"); // assigning new variable to the element containing id = "chooseFile".
-upload.addEventListener("change", function () { // adding event listener to the element.
-    let data = new FileReader(); // creating new FileReader object - read the contents of a file and store them as a string.
-    data.readAsText(upload.files[0]); // readAsText() - reading the file as text, upload.files[0] - the first file in the "upload" element.
-    data.onload = function () { // object.unload = function () {} - adding event listener to the FileReader object "data".
-        let text = data.result // 
- }); 
+            if (em != "") {
+                if (em = em.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/) 
+                    || em[em.length - 3] === '.') // strings are arrays of characters
+                {
+                    document.querySelector("table#val").appendChild(creEle);
+                    valMail.push(em);
+                    valNo = valNo + 1;
+                    return false;
+                } else {
+                    document.querySelector("table#inval").appendChild(creEle);
+                    invalNo = invalNo + 1;
+                    return false;
+                }
+            }
+        });
+        
+        document.querySelector('#valCount').innerHTML = valNo;
+        document.querySelector('#invalCount').innerHTML = invalNo;
+    };
+}); 
