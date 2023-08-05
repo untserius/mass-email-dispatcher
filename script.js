@@ -1,3 +1,4 @@
+// CSV File Reading Logic
 let upload = document.getElementById("upload");
 upload.addEventListener("change", () => {
 	let fr = new FileReader();
@@ -16,13 +17,14 @@ upload.addEventListener("change", () => {
 			});
 			let creEle = document.createElement("tr");
 			creEle.innerHTML = m;
+
+			// Email Validation Logic
 			if (em != "") {
 				if (
 					(em =
 						em.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/) ||
 						em[em.length - 3] === ".")
 				) {
-					// strings are arrays of characters
 					document.querySelector("table#val").appendChild(creEle);
 					valMail.push(em);
 					valNo = valNo + 1;
@@ -32,6 +34,9 @@ upload.addEventListener("change", () => {
 				}
 			}
 		});
+
+		shuffleEffect(valCountElement, valNo);
+		shuffleEffect(invalCountElement, invalNo);
 
 		document.querySelector("#valCount").innerHTML = valNo;
 		document.querySelector("#invalCount").innerHTML = invalNo;
@@ -66,8 +71,48 @@ upload.addEventListener("change", () => {
 							console.log("FAILED...", error);
 						}
 					);
-				alert(valNo + " emails has been sent successfully.");
 			}
+			alert(valNo + " emails has been sent successfully.");
 		});
 	};
 });
+
+/* --------------------------------------------------------------------------- */
+
+// Shuffling Effect Logic
+let valCountElement = document.querySelector("#valCount");
+let invalCountElement = document.querySelector("#invalCount");
+
+function shuffleEffect(element, targetCount) {
+	let count = parseInt(element.innerText);
+
+	if (isNaN(count)) {
+		count = 0;
+	}
+
+	if (count === targetCount) {
+		return;
+	}
+
+	let increment = Math.ceil(Math.abs(targetCount - count) / 50);
+	increment = targetCount < count ? -increment : increment;
+
+	function updateCount() {
+		count += increment;
+		element.innerText = count;
+
+		if (
+			(increment > 0 && count >= targetCount) ||
+			(increment < 0 && count <= targetCount)
+		) {
+			element.innerText = targetCount;
+		} else {
+			requestAnimationFrame(updateCount);
+		}
+	}
+
+	updateCount();
+}
+
+valCountElement.innerText = 0;
+invalCountElement.innerText = 0;

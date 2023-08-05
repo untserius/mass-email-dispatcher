@@ -1,58 +1,147 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 .main {
-    height: 100vh;
-    width: 100%;
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	font-family: "Merriweather Sans", sans-serif;
+	background: linear-gradient(#04619f, #000000);
 }
 
 .header {
-    font-family: 'Merriweather', serif;
-    font-size: 3vh;
-    text-align: center;
-    padding: 20px;
+	font-family: "Merriweather", serif;
+	font-size: 3vh;
+	text-align: center;
+	padding: 40px 20px;
 }
 
 .container {
-    padding: 20px;
+	padding: 40px 20px;
 }
 
-.card1, .card2, .card3 {
-    border: 1px solid black;
-    margin-bottom: 30px;
-    padding: 30px 20px;
-    /* width: 60vh; */
+.card1,
+.card3 {
+	/* background: transparent; */
+	background: rgba(0, 0, 0, 0.4);
+	border: 1px solid black;
+	margin-bottom: 30px;
+	padding: 30px;
+}
+
+.card3 {
+	margin-bottom: 0;
 }
 
 .card1 {
-    text-align: center;
+	text-align: center;
 }
 
 .card2 {
-    display: flex;
-    justify-content: space-evenly;
+	display: flex;
+	justify-content: space-evenly;
+	gap: 10px;
 }
 
-.card2 .validEmail {
-    height: 100px;
-    width: 300px;
-    overflow: auto;
+.emailBox > h3 {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 7px;
+	font-weight: 100;
 }
 
-.card2 .invalidEmail {
-    height: 100px;
-    width: 300px;
-    overflow: auto;
+.emailBox span {
+	font-weight: 900;
+	margin-left: 5px;
+}
+
+.scrollbox {
+	height: 175px;
+	min-width: 300px;
+	width: fit-content;
+	overflow: auto;
 }
 
 .card3 form {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
+
+form > input,
+textarea,
+button {
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+/* -----------------Card 1 Component----------------- */
+
+.card1 input[type="file"] {
+	display: none;
+}
+
+.card1 label {
+	color: #000;
+	margin: auto;
+	display: block;
+	width: fit-content;
+	padding: 10px 40px;
+	border-radius: 80px;
+	transition: all 0.1s;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	background: #ffd700;
+	box-shadow: 4px 4px 1px #febe10;
+}
+
+.card1 label:active {
+	box-shadow: 0 0 0;
+	transform: translateX(4px) translateY(4px);
+}
+
+label i {
+	margin-right: 10px;
+}
+
+/* -------------------Card 2--------------------- */
+
+.card2 .validEmail {
+	background: rgba(0, 0, 0, 0.4);
+	border: 1px solid black;
+	margin-bottom: 30px;
+	padding: 30px;
+}
+
+.card2 .invalidEmail {
+	background: rgba(0, 0, 0, 0.4);
+	border: 1px solid black;
+	margin-bottom: 30px;
+	padding: 30px;
+}
+
+.scrollbox::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+}
+
+.scrollbox::-webkit-scrollbar {
+	width: 5px;
+}
+
+.scrollbox::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #febe10;
+}
+
+/* --------------Card 3----------------- */

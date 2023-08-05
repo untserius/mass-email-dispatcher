@@ -6,6 +6,10 @@
 
 		<script src="script.js" defer></script>
 		<link rel="stylesheet" href="styles.css" type="text/css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -22,26 +26,33 @@
 
 			<div class="container">
 				<div class="card1">
+					<label for="upload">
+						<i class="fa-solid fa-file-arrow-up"></i> Upload
+					</label>
 					<input type="file" id="upload" accept="text/csv" />
 				</div>
+
 				<div class="card2">
-					<div class="validEmail">
-						<table id="val">
-							<tr>
-								<td>
-									<h3>Valid Emails : <span id="valCount"></span></h3>
-								</td>
-							</tr>
-						</table>
+					<div class="validEmail emailBox">
+						<h3>Valid Emails : <span id="valCount"></span></h3>
+						<div class="valTable scrollbox">
+							<table id="val">
+								<tr>
+									<td></td>
+								</tr>
+							</table>
+						</div>
 					</div>
-					<div class="invalidEmail">
-						<table id="inval">
-							<tr>
-								<td>
-									<h3>Invalid Emails : <span id="invalCount"></span></h3>
-								</td>
-							</tr>
-						</table>
+
+					<div class="invalidEmail emailBox">
+						<h3>Invalid Emails : <span id="invalCount"></span></h3>
+						<div class="invalTable scrollbox">
+							<table id="inval">
+								<tr>
+									<td></td>
+								</tr>
+							</table>
+						</div>
 					</div>
 				</div>
 				<div class="card3">
