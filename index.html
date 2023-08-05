@@ -1,56 +1,77 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Mass Mail Dispatcher</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<title>Mass Mail Dispatcher</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <script src="script.js" defer></script>
-        <link rel="stylesheet" href="styles.css" type="text/css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans&display=swap" rel="stylesheet">
-    </head>
+		<script src="script.js" defer></script>
+		<link rel="stylesheet" href="styles.css" type="text/css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
 
-    <body>
-        <div class="main">
-            <div class="header">
-                <h1>Mass Mail Dispatcher</h1>
-            </div>
+	<body>
+		<div class="main">
+			<div class="header">
+				<h1>Mass Mail Dispatcher</h1>
+			</div>
 
-            <div class="container">
-                <div class="card1">
-                    <input type="file" id="upload" accept="text/csv">
-                </div>
-                <div class="card2">                                         
-                    <div class="validEmail">
-                        <table id="val">
-                            <tr>
-                                <td>
-                                    <h3>Valid Emails : <span id="valCount"></span></h3>
-                                </td>
-                            </tr>
-                        </table>                             
-                    </div>
-                    <div class="invalidEmail">
-                        <table id="inval">
-                            <tr>
-                                <td>
-                                    <h3>Invalid Emails : <span id="invalCount"></span></h3>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card3">
-                    <form>
-                        <h2>Enter Details</h2>
-                        <input type="email" id="from" placeholder="From" required>
-                        <input type="text" id="subject" placeholder="Subject" required>
-                        <textarea id="message" rows="12" cols="12" placeholder="Body" required></textarea>
-                        <button type="submit">Send</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </body>
+			<div class="container">
+				<div class="card1">
+					<input type="file" id="upload" accept="text/csv" />
+				</div>
+				<div class="card2">
+					<div class="validEmail">
+						<table id="val">
+							<tr>
+								<td>
+									<h3>Valid Emails : <span id="valCount"></span></h3>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="invalidEmail">
+						<table id="inval">
+							<tr>
+								<td>
+									<h3>Invalid Emails : <span id="invalCount"></span></h3>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="card3">
+					<form>
+						<h2>Enter Details</h2>
+						<input type="text" id="name" placeholder="Your Name" required />
+						<input type="text" id="subject" placeholder="Subject" required />
+						<textarea
+							id="message"
+							rows="12"
+							cols="12"
+							placeholder="Write your email here...."
+							required
+						></textarea>
+						<button id="submit">Send</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Browser script for EmailJS -->
+
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+		></script>
+		<script type="text/javascript">
+			(function () {
+				emailjs.init("EaluvEWi8REuOyste");
+			})();
+		</script>
+	</body>
 </html>
