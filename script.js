@@ -116,3 +116,28 @@ function shuffleEffect(element, targetCount) {
 
 valCountElement.innerText = 0;
 invalCountElement.innerText = 0;
+
+// Vanish Effect Placeholders
+const textarea = document.getElementById("message");
+textarea.addEventListener("focus", function () {
+	this.placeholder = "";
+});
+textarea.addEventListener("blur", function () {
+	this.placeholder = "Write your message here....";
+});
+
+const name = document.getElementById("name");
+name.addEventListener("focus", function () {
+	this.placeholder = "";
+});
+name.addEventListener("blur", function () {
+	this.placeholder = "Your Name";
+});
+
+const subject = document.getElementById("subject");
+subject.addEventListener("focus", function () {
+	this.placeholder = "";
+});
+subject.addEventListener("blur", function () {
+	this.placeholder = "Subject";
+});

@@ -43,10 +43,6 @@ body {
 	margin-bottom: 0;
 }
 
-.card1 {
-	text-align: center;
-}
-
 .card2 {
 	display: flex;
 	justify-content: space-evenly;
@@ -54,8 +50,7 @@ body {
 }
 
 .emailBox > h3 {
-	display: flex;
-	justify-content: center;
+	text-align: center;
 	margin-bottom: 7px;
 	font-weight: 100;
 }
@@ -63,6 +58,8 @@ body {
 .emailBox span {
 	font-weight: 900;
 	margin-left: 5px;
+	color: #febe10;
+	font-family: "Orbitron", sans-serif;
 }
 
 .scrollbox {
@@ -75,13 +72,6 @@ body {
 .card3 form {
 	display: flex;
 	flex-direction: column;
-}
-
-form > input,
-textarea,
-button {
-	padding: 10px;
-	margin-bottom: 10px;
 }
 
 /* -----------------Card 1 Component----------------- */
@@ -145,3 +135,62 @@ label i {
 }
 
 /* --------------Card 3----------------- */
+
+form h3 {
+	margin-bottom: 16px;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.params {
+	color: #fff;
+	padding: 10px;
+	margin-bottom: 10px;
+	background: transparent;
+	border: 0;
+	border-bottom: 1px solid;
+	font-family: "Merriweather Sans", sans-serif;
+	transition: all 0.5s;
+}
+
+.params:focus {
+	outline: none;
+}
+
+.params:valid:not(#subject) {
+	border-bottom: 1px solid #089404;
+}
+
+.params:focus:invalid {
+	border-bottom: 1px solid #fb4d4d;
+}
+
+form textarea {
+	resize: none;
+}
+
+form button {
+	width: fit-content;
+	padding: 10px 30px;
+	margin: auto;
+	font-size: 14px;
+	margin-top: 10px;
+	border-radius: 80px;
+	transition: all 0.1s;
+	letter-spacing: 1px;
+	border: 0;
+	color: #fff;
+	text-transform: uppercase;
+	background: rgb(57, 57, 253);
+	box-shadow: 4px 4px 1px rgb(18, 18, 131);
+	font-family: "Merriweather Sans", sans-serif;
+}
+
+form button:active {
+	box-shadow: 0 0 0;
+	transform: translateX(4px) translateY(4px);
+}
+
+i {
+	margin-right: 10px;
+}

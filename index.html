@@ -12,8 +12,10 @@
 		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Merriweather&family=Merriweather+Sans&display=swap"
 			rel="stylesheet"
 		/>
 	</head>
@@ -57,17 +59,32 @@
 				</div>
 				<div class="card3">
 					<form>
-						<h2>Enter Details</h2>
-						<input type="text" id="name" placeholder="Your Name" required />
-						<input type="text" id="subject" placeholder="Subject" required />
+						<h3>Enter Details</h3>
+						<input
+							type="text"
+							id="name"
+							class="params"
+							placeholder="Your Name"
+							pattern="^[A-Za-z\s]+$"
+							required
+						/>
+						<input
+							type="text"
+							id="subject"
+							class="params"
+							placeholder="Subject"
+						/>
 						<textarea
 							id="message"
+							class="params"
 							rows="12"
 							cols="12"
-							placeholder="Write your email here...."
+							placeholder="Write your message here...."
 							required
 						></textarea>
-						<button id="submit">Send</button>
+						<button id="submit">
+							<i class="fa-solid fa-paper-plane"></i>Send
+						</button>
 					</form>
 				</div>
 			</div>
