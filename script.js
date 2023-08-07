@@ -44,7 +44,6 @@ upload.addEventListener("change", () => {
 		let submitBtn = document.getElementById("submit");
 		submitBtn.addEventListener("click", (event) => {
 			event.preventDefault(); // Prevent form submission behavior
-			console.log("Submit button clicked!");
 
 			let name = document.getElementById("name").value;
 			let subject = document.getElementById("subject").value;
@@ -52,6 +51,12 @@ upload.addEventListener("change", () => {
 			// Get the message content using textContent instead of value
 			let messageElement = document.getElementById("message");
 			let message = messageElement.textContent || messageElement.value;
+
+			// Check if required fields are filled
+			if (!name || !subject || !message) {
+				alert("Please fill all the required fields before sending the email.");
+				return;
+			}
 
 			for (let i = 0; i < valMail.length; i++) {
 				let templateParams = {

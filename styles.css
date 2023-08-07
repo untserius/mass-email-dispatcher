@@ -16,7 +16,9 @@ body {
 	align-items: center;
 	justify-content: space-evenly;
 	font-family: "Merriweather Sans", sans-serif;
-	background: linear-gradient(#04619f, #000000);
+	background-image: url(alex-dukhanov-1l2ZSKCMDio-unsplash.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .header {
@@ -26,13 +28,47 @@ body {
 	padding: 40px 20px;
 }
 
+.header h1 {
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: bold;
+	background-image: linear-gradient(
+		235deg,
+		#ede0d4,
+		#e6b8a2,
+		#e6ccb2,
+		#ddb892,
+		#7f5539,
+		#9c6644,
+		#9c6644,
+		#7f5539,
+		#ddb892,
+		#e6ccb2,
+		#e6b8a2,
+		#ede0d4
+	);
+
+	background-size: 200%, auto;
+	animation: wave 10s linear infinite;
+}
+
+@keyframes wave {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 200% 200%;
+	}
+}
+
 .container {
 	padding: 40px 20px;
 }
 
 .card1,
 .card3 {
-	/* background: transparent; */
+	backdrop-filter: blur(10px);
 	background: rgba(0, 0, 0, 0.4);
 	border: 1px solid black;
 	margin-bottom: 30px;
@@ -91,7 +127,7 @@ body {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	background: #ffd700;
-	box-shadow: 4px 4px 1px #febe10;
+	box-shadow: 4px 4px 1px #cf9c12;
 }
 
 .card1 label:active {
@@ -110,6 +146,7 @@ label i {
 	border: 1px solid black;
 	margin-bottom: 30px;
 	padding: 30px;
+	backdrop-filter: blur(10px);
 }
 
 .card2 .invalidEmail {
@@ -117,6 +154,7 @@ label i {
 	border: 1px solid black;
 	margin-bottom: 30px;
 	padding: 30px;
+	backdrop-filter: blur(10px);
 }
 
 .scrollbox::-webkit-scrollbar-track {
@@ -161,8 +199,27 @@ form h3 {
 	border-bottom: 1px solid #089404;
 }
 
-.params:focus:invalid {
+.params:invalid {
 	border-bottom: 1px solid #fb4d4d;
+	animation: vibrate 0.2s linear;
+}
+
+@keyframes vibrate {
+	0% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(-4px);
+	}
+	50% {
+		transform: translateX(4px);
+	}
+	75% {
+		transform: translateX(-4px);
+	}
+	100% {
+		transform: translateX(0);
+	}
 }
 
 form textarea {
@@ -181,8 +238,8 @@ form button {
 	border: 0;
 	color: #fff;
 	text-transform: uppercase;
-	background: rgb(57, 57, 253);
-	box-shadow: 4px 4px 1px rgb(18, 18, 131);
+	background: #50b14d;
+	box-shadow: 4px 4px 1px #176a14;
 	font-family: "Merriweather Sans", sans-serif;
 }
 

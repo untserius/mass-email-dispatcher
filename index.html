@@ -36,7 +36,7 @@
 
 				<div class="card2">
 					<div class="validEmail emailBox">
-						<h3>Valid Emails : <span id="valCount"></span></h3>
+						<h3>Valid IDs : <span id="valCount"></span></h3>
 						<div class="valTable scrollbox">
 							<table id="val">
 								<tr>
@@ -47,7 +47,7 @@
 					</div>
 
 					<div class="invalidEmail emailBox">
-						<h3>Invalid Emails : <span id="invalCount"></span></h3>
+						<h3>Invalid IDs : <span id="invalCount"></span></h3>
 						<div class="invalTable scrollbox">
 							<table id="inval">
 								<tr>
@@ -65,7 +65,7 @@
 							id="name"
 							class="params"
 							placeholder="Your Name"
-							pattern="^[A-Za-z\s]+$"
+							pattern="^(?!.*\s\s)[A-Za-z\s]+$"
 							required
 						/>
 						<input
