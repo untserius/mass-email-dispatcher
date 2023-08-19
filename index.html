@@ -10,6 +10,10 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,6 +28,9 @@
 		<div class="main">
 			<div class="header">
 				<h1>Mass Mail Dispatcher</h1>
+				<a target="_blank" href="Demo Video.mp4"
+					>Demo <i class="ri-arrow-right-up-line"></i
+				></a>
 			</div>
 
 			<div class="container">
@@ -64,7 +71,7 @@
 							type="text"
 							id="name"
 							class="params"
-							placeholder="Your Name"
+							placeholder="Name"
 							pattern="^(?!.*\s\s)[A-Za-z\s]+$"
 							required
 						/>
@@ -77,11 +84,12 @@
 						<textarea
 							id="message"
 							class="params"
-							rows="12"
+							rows="9"
 							cols="12"
 							placeholder="Write your message here...."
 							required
 						></textarea>
+						<p><span>-</span> Required</p>
 						<button id="submit">
 							<i class="fa-solid fa-paper-plane"></i>Send
 						</button>

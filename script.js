@@ -4,32 +4,32 @@ upload.addEventListener("change", () => {
 	let fr = new FileReader();
 	fr.readAsText(upload.files[0]);
 	fr.onload = function () {
-		let Arr = fr.result.split(/\r?\n|\n/).map((e) => {
-			return e.split(",");
+		let Arr = fr.result.split(/\r?\n|\n/).map((data) => {
+			return data.split(",");
 		});
 		let valNo = 0;
 		let invalNo = 0;
 		let valMail = [];
-		Arr.forEach((e) => {
-			let em = String(e);
-			let m = e.map((e) => {
-				return `<td>${e}</td>`;
+		Arr.forEach((data) => {
+			let email = String(data);
+			let tableCells = data.map((data) => {
+				return `<td>${data}</td>`;
 			});
-			let creEle = document.createElement("tr");
-			creEle.innerHTML = m;
+			let tableRow = document.createElement("tr");
+			tableRow.innerHTML = tableCells;
 
 			// Email Validation Logic
-			if (em != "") {
+			if (email != "") {
 				if (
-					(em =
-						em.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/) ||
-						em[em.length - 3] === ".")
+					(email = email.match(
+						/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z\.]{2,}$/
+					))
 				) {
-					document.querySelector("table#val").appendChild(creEle);
-					valMail.push(em);
+					document.querySelector("table#val").appendChild(tableRow);
+					valMail.push(email);
 					valNo = valNo + 1;
 				} else {
-					document.querySelector("table#inval").appendChild(creEle);
+					document.querySelector("table#inval").appendChild(tableRow);
 					invalNo = invalNo + 1;
 				}
 			}
@@ -77,7 +77,7 @@ upload.addEventListener("change", () => {
 						}
 					);
 			}
-			alert(valNo + " emails has been sent successfully.");
+			alert(valNo + " email(s) has been sent successfully.");
 		});
 	};
 });
